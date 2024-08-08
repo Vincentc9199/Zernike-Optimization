@@ -17,7 +17,7 @@ def nelder_mead(f, initial_point, initial_step, tolerance, maxiter, alpha, gamma
         initial_point_copy[i] = initial_point_copy[i] + initial_step
         current_simplex.append([initial_point_copy, f(initial_point_copy)])
     
-    print(current_simplex)
+    #print(current_simplex)
     
     iter = 0
 
@@ -29,13 +29,13 @@ def nelder_mead(f, initial_point, initial_step, tolerance, maxiter, alpha, gamma
         # Order the points by loss value
         ordered_simplex = sorted(current_simplex, key=lambda x: float(x[1]))
 
-        print(ordered_simplex)
+        #print(ordered_simplex)
 
         # Check for termination
         # For now terminate when reached max # of iterations
         if iter == maxiter:
-            # Return best simplex point and its loss value
-            return ordered_simplex[0]
+            # Return the simplex
+            return ordered_simplex
         
         else:
 
